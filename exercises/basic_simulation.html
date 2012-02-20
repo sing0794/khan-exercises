@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-require="math math-format simulation">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Stock behavior over time having constant inflow and linear outflow</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="vars">
+			<var id="INITSTOCK">randRange( -100, 100 )</var>
+			<var id="INFLOWRATE">randRange( 1, 10 )</var>
+			<var id="OUTFLOWRATE_COEF">randRange( 1, 4 )</var>
+			<var id="OUTFLOWRATE_CONST">randRangeNonZero( -1, 1 ) * randRange( 1, 5 )</var>
+			<var id="ACCURACY">randRange( 1, 5 )/10</var>
+			<var id="PERIOD">randRange( 1, 10 )</var>
+			<var id="ZERO">randRange( 0, 0)</var>
+			<var id="FINALSTOCK">singleStockChangeConstantInflowLinearOutflowFinal( INITSTOCK, INFLOWRATE, OUTFLOWRATE_COEF, OUTFLOWRATE_CONST, ACCURACY, PERIOD)</var>
+			<var id="STOCKBEHAVIOR">singleStockChangeConstantInflowLinearOutflowBehavior( INITSTOCK, INFLOWRATE, OUTFLOWRATE_COEF, OUTFLOWRATE_CONST, ACCURACY, PERIOD, ZERO)</var>
+			
+		</div>
+
+		<div class="problems">
+			<div id="a-plus-b">
+				<div class="vars">
+					<var id="SOLUTION">FINALSTOCK</var>
+				</div>
+
+				<p class="problem">Preview stock behavior given that: <br>Initial stock : <code><var>INITSTOCK</var></code>
+				                                                 <br>Inflow rate : <code><var>INFLOWRATE</var></code>
+				                                                 <br>Outflow rate : <code><var>plus( OUTFLOWRATE_COEF + "Stock", OUTFLOWRATE_CONST )</var></code>
+				                                                 <br>Accuracy : <code><var>ACCURACY</var></code> <var>plural( "second", ACCURACY )</var>
+				                                                 <br>Period of observation : <code><var>PERIOD</var></code> <var>plural( "second", PERIOD )</var>
+				                                                 <br><br><b>RESULTS</b>:
+				                                                 <br><b>Final stock :</b> <code><var>FINALSTOCK</var></code>
+				                                                 <br><b>Stock behavior : </b><var>stockBehaviorOverTime( STOCKBEHAVIOR )</var>
+				</p>
+				<p class="solution"><var>SOLUTION</var></p>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
